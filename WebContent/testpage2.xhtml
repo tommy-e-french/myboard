@@ -11,18 +11,14 @@
     	<ui:composition template="/template/common/commonLayout.xhtml">
     	
     		<ui:define name="content">
-    			<h2>This is testpage content</h2>
+    			<h2>This is testpage2 content</h2>
     			
     			<f:view>
     			    <h:form>
+    			        <h:outputText value="&lt;br/&gt;" escape="false" />
     			    
-    			        <h:outputText value="&lt;br/&gt;" escape="false" />
-    			        <h:outputText value="This is a message from TestBeanOne: #{testBeanOne.message}" />
-    			        <h:outputText value="&lt;br/&gt;" escape="false" />
-    			        <h:outputText value="&lt;br/&gt;" escape="false" />
-    			        
-    			        <h:outputText value="Take me to testpage2: " />
-    			        <h:commandButton action="testpage2" value="Submit" />
+    			        <h:outputText value="Take me to testpage: " />
+    			        <h:commandButton action="testpage" value="Submit" />
     			    </h:form>
     			</f:view>
     			
