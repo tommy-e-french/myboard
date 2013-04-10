@@ -45,7 +45,6 @@ public class MessageRecipientDao extends BaseDao {
 		return instance;
 	}
 	
-//Begin Modification (Ben Andow)
 	@SuppressWarnings("unchecked")
 	public List<MessageRecipient> readAll(MessageRecipient instance) {
 		log.debug("readAll " + entitySimpleName);
@@ -62,7 +61,6 @@ public class MessageRecipientDao extends BaseDao {
 		}
 		return result;
 	}
-//End Modification (Ben Andow)
 
 	public void update(MessageRecipient instance) {
 		log.debug("updating " + entitySimpleName + " instance");

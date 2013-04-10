@@ -14,10 +14,8 @@ public class Department implements java.io.Serializable {
 
 	private int deptId;
 	private String departmentName;
-//Begin Modification (Ben Andow)
 	private Set<CourseInfo> courseInfos = new HashSet<CourseInfo>(0);
 	private Set<Users> users = new HashSet<Users>(0);
-//End Modification (Ben Andow)
 
 	public Department() {
 	}
@@ -27,7 +25,6 @@ public class Department implements java.io.Serializable {
 		this.departmentName = departmentName;
 	}
 
-//Begin Modification (Ben Andow)
 	public Department(int deptId, String departmentName,
 			Set<CourseInfo> courseInfos, Set<Users> users) {
 		this.deptId = deptId;
@@ -35,7 +32,6 @@ public class Department implements java.io.Serializable {
 		this.courseInfos = courseInfos;
 		this.users = users;
 	}
-//End Modification (Ben Andow)
 
 	public int getDeptId() {
 		return this.deptId;
@@ -53,7 +49,6 @@ public class Department implements java.io.Serializable {
 		this.departmentName = departmentName;
 	}
 
-//Begin Modification (Ben Andow)
 	public Set<CourseInfo> getCourseInfos() {
 		return this.courseInfos;
 	}
@@ -69,5 +64,4 @@ public class Department implements java.io.Serializable {
 	public void setUsers(Set<Users> users) {
 		this.users = users;
 	}
-//End Modification (Ben Andow)
 }

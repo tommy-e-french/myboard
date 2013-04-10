@@ -16,30 +16,21 @@ public class Users implements java.io.Serializable {
 	private String uid;
 	private String firstName;
 	private String lastName;
-//Begin Modification (Ben Andow)
 	private Department department;
-//	private int department;
-//End Modification (Ben Andow)
 	private String password;
-//Begin Modification (Ben Andow)
 	private AccountPermissions permission;
-//	private int permissionId;
-//End Modification (Ben Andow)
 	private Date creationDate;
 	private Date lastLogin;
 	private String privateDirectory;
 	private boolean active;
 	private String emailAddress;
-//Begin Modification (Ben Andow)
 	private Set<CourseUsers> courseUsers = new HashSet<CourseUsers>(0);
 	private Set<AdditionalCalendarEntries> additionalCalendarEntries = new HashSet<AdditionalCalendarEntries>(
 			0);
-//End Modification (Ben Andow)
-	
+
 	public Users() {
 	}
 
-//Begin Modification (Ben Andow)
 	public Users(String uid, String firstName, String lastName, Department department,
 			String password, AccountPermissions permission, Date creationDate,
 			Date lastLogin, String privateDirectory, boolean active, String emailAddress) {
@@ -76,39 +67,6 @@ public class Users implements java.io.Serializable {
 		this.additionalCalendarEntries = additionalCalendarEntries;
 	}
 	
-//	public Users(String uid, String firstName, String lastName, int department,
-//			String password, int permissionId, Date creationDate,
-//			Date lastLogin, String privateDirectory, boolean active) {
-//		this.uid = uid;
-//		this.firstName = firstName;
-//		this.lastName = lastName;
-//		this.department = department;
-//		this.password = password;
-//		this.permissionId = permissionId;
-//		this.creationDate = creationDate;
-//		this.lastLogin = lastLogin;
-//		this.privateDirectory = privateDirectory;
-//		this.active = active;
-//	}
-//
-//	public Users(String uid, String firstName, String lastName, int department,
-//			String password, int permissionId, Date creationDate,
-//			Date lastLogin, String privateDirectory, boolean active,
-//			String emailAddress) {
-//		this.uid = uid;
-//		this.firstName = firstName;
-//		this.lastName = lastName;
-//		this.department = department;
-//		this.password = password;
-//		this.permissionId = permissionId;
-//		this.creationDate = creationDate;
-//		this.lastLogin = lastLogin;
-//		this.privateDirectory = privateDirectory;
-//		this.active = active;
-//		this.emailAddress = emailAddress;
-//	}
-//End Modification (Ben Andow)
-	
 	public String getUid() {
 		return this.uid;
 	}
@@ -133,7 +91,6 @@ public class Users implements java.io.Serializable {
 		this.lastName = lastName;
 	}
 
-//Begin Modification (Ben Andow)
 	public Department getDepartment() {
 		return this.department;
 	}
@@ -142,15 +99,6 @@ public class Users implements java.io.Serializable {
 		this.department = department;
 	}
 	
-//	public int getDepartment() {
-//		return this.department;
-//	}
-//
-//	public void setDepartment(int department) {
-//		this.department = department;
-//	}
-//End Modification (Ben Andow)
-
 	public String getPassword() {
 		return this.password;
 	}
@@ -159,7 +107,6 @@ public class Users implements java.io.Serializable {
 		this.password = password;
 	}
 	
-//Begin Modification (Ben Andow)
 	public AccountPermissions getPermission() {
 		return this.permission;
 	}
@@ -167,15 +114,6 @@ public class Users implements java.io.Serializable {
 	public void setPermission(AccountPermissions permission) {
 		this.permission = permission;
 	}
-	
-//	public int getPermissionId() {
-//		return this.permissionId;
-//	}
-//
-//	public void setPermissionId(int permissionId) {
-//		this.permissionId = permissionId;
-//	}
-//End Modification (Ben Andow)
 	
 	public Date getCreationDate() {
 		return this.creationDate;
@@ -216,8 +154,7 @@ public class Users implements java.io.Serializable {
 	public void setEmailAddress(String emailAddress) {
 		this.emailAddress = emailAddress;
 	}
-	
-//Begin Modification (Ben Andow)	
+		
 	public Set<CourseUsers> getCourseUsers() {
 		return this.courseUsers;
 	}
@@ -234,5 +171,4 @@ public class Users implements java.io.Serializable {
 			Set<AdditionalCalendarEntries> additionalCalendarEntries) {
 		this.additionalCalendarEntries = additionalCalendarEntries;
 	}
-//End Modification (Ben Andow)
 }

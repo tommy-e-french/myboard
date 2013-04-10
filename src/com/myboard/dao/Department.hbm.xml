@@ -11,7 +11,6 @@
         <property name="departmentName" type="string">
             <column name="department_name" length="16777215" not-null="true" />
         </property>
-<!-- Begin Modification (Ben Andow) -->
 		<set name="courseInfos" table="Course_Info" inverse="true" lazy="true" fetch="select">
             <key>
                 <column name="department" not-null="true" />
@@ -24,6 +23,5 @@
             </key>
             <one-to-many class="com.myboard.dao.Users" />
         </set>
-<!-- End Modification (Ben Andow) -->
     </class>
 </hibernate-mapping>

@@ -13,7 +13,6 @@ public class CourseUsers implements java.io.Serializable {
 	private static final long serialVersionUID = -6902433651142177737L;
 
 	private Integer courseUid;
-//Begin Modification (Ben Andow)
 	private CourseRoles role;
 	private Courses course;
 	private Users user;
@@ -29,15 +28,10 @@ public class CourseUsers implements java.io.Serializable {
 	private Set<Assignments> assignments = new HashSet<Assignments>(0);
 	private Set<AdditionalGradeEntries> additionalGradeEntriesCreated = new HashSet<AdditionalGradeEntries>(
 			0);
-//	private int courseId;
-//	private String uid;
-//	private int roleId;
-//End Modification (Ben Andow)
 	
 	public CourseUsers() {
 	}
 
-//Begin Modification (Ben Andow)
 	public CourseUsers(CourseRoles role, Courses course, Users user) {
 		this.role = role;
 		this.course = course;
@@ -64,12 +58,6 @@ public class CourseUsers implements java.io.Serializable {
 		this.assignments = assignments;
 		this.additionalGradeEntriesCreated = additionalGradeEntriesCreated;
 	}
-//	public CourseUsers(int courseId, String uid, int roleId) {
-//		this.courseId = courseId;
-//		this.uid = uid;
-//		this.roleId = roleId;
-//	}
-//End Modification (Ben Andow)
 
 	public Integer getCourseUid() {
 		return this.courseUid;
@@ -79,7 +67,6 @@ public class CourseUsers implements java.io.Serializable {
 		this.courseUid = courseUid;
 	}
 
-//Begin Modification (Ben Andow)
 	public CourseRoles getRole() {
 		return this.role;
 	}
@@ -170,29 +157,5 @@ public class CourseUsers implements java.io.Serializable {
 			Set<AdditionalGradeEntries> additionalGradeEntriesCreated) {
 		this.additionalGradeEntriesCreated = additionalGradeEntriesCreated;
 	}
-	
-//	public int getCourseId() {
-//		return this.courseId;
-//	}
-//
-//	public void setCourseId(int courseId) {
-//		this.courseId = courseId;
-//	}
-//
-//	public String getUid() {
-//		return this.uid;
-//	}
-//
-//	public void setUid(String uid) {
-//		this.uid = uid;
-//	}
-//
-//	public int getRoleId() {
-//		return this.roleId;
-//	}
-//
-//	public void setRoleId(int roleId) {
-//		this.roleId = roleId;
-//	}
-//End Modification (Ben Andow)
+
 }

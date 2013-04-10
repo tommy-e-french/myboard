@@ -13,25 +13,18 @@ public class Courses implements java.io.Serializable {
 	private static final long serialVersionUID = -266516827773610878L;
 
 	private Integer courseId;
-//Begin Modification (Ben Andow)
 	private CourseSection section;
 	private Semester semester;
-//	private int courseSectionId;
-//	private int courseSemesterId;
-//End Modification (Ben Andow)
 	private String courseRootDirectory;
-//Begin Modification (Ben Andow)
 	private Set<CourseMaterial> materials = new HashSet<CourseMaterial>(0);
 	private Set<Announcements> announcements = new HashSet<Announcements>(0);
 	private Set<CourseUsers> users = new HashSet<CourseUsers>(0);
 	private Set<Message> messages = new HashSet<Message>(0);
 	private Set<Assignments> assignments = new HashSet<Assignments>(0);
-//End Modification (Ben Andow)
 
 	public Courses() {
 	}
 
-//Begin Modification (Ben Andow)
 	public Courses(CourseSection section, Semester semester, 
 			String courseRootDirectory) {
 		this.semester = semester;
@@ -53,14 +46,6 @@ public class Courses implements java.io.Serializable {
 		this.assignments = assignments;
 	}
 	
-//	public Courses(int courseSectionId, int courseSemesterId,
-//			String courseRootDirectory) {
-//		this.courseSectionId = courseSectionId;
-//		this.courseSemesterId = courseSemesterId;
-//		this.courseRootDirectory = courseRootDirectory;
-//	}
-//End Modification (Ben Andow)
-	
 	public Integer getCourseId() {
 		return this.courseId;
 	}
@@ -69,8 +54,6 @@ public class Courses implements java.io.Serializable {
 		this.courseId = courseId;
 	}
 
-//Begin Modification (Ben Andow)
-	
 	public Semester getSemester() {
 		return this.semester;
 	}
@@ -87,23 +70,6 @@ public class Courses implements java.io.Serializable {
 		this.section = section;
 	}
 	
-//	public int getCourseSectionId() {
-//		return this.courseSectionId;
-//	}
-//
-//	public void setCourseSectionId(int courseSectionId) {
-//		this.courseSectionId = courseSectionId;
-//	}
-//
-//	public int getCourseSemesterId() {
-//		return this.courseSemesterId;
-//	}
-//
-//	public void setCourseSemesterId(int courseSemesterId) {
-//		this.courseSemesterId = courseSemesterId;
-//	}
-//End Modification (Ben Andow)
-	
 	public String getCourseRootDirectory() {
 		return this.courseRootDirectory;
 	}
@@ -112,7 +78,6 @@ public class Courses implements java.io.Serializable {
 		this.courseRootDirectory = courseRootDirectory;
 	}
 	
-//Begin Modification (Ben Andow)
 	public Set<CourseMaterial> getMaterials() {
 		return this.materials;
 	}
@@ -152,5 +117,4 @@ public class Courses implements java.io.Serializable {
 	public void setAssignments(Set<Assignments> assignments) {
 		this.assignments = assignments;
 	}
-//End Modification (Ben Andow)
 }

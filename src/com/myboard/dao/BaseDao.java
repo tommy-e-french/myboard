@@ -73,7 +73,6 @@ public class BaseDao {
 		}
 	}
 
-//Begin Modification (Ben Andow)
 	public List<?> readAll(String entityClassFullName, Object o) throws EntityNotFoundException{
 		Session session = null;
 		Transaction transaction = null;
@@ -97,7 +96,6 @@ public class BaseDao {
 			if(session != null && session.isOpen()){session.close();}
 		}
 	}
-//End Modification (Ben Andow)
 	
 	public void update(Object instance) {
 		Session session = null;

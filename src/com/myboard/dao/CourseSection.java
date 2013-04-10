@@ -13,19 +13,13 @@ public class CourseSection implements java.io.Serializable {
 	private static final long serialVersionUID = -9051594078880063185L;
 
 	private Integer courseSectionId;
-//Begin Modification (Ben Andow)
 	private CourseInfo courseInfo;
-//	private int courseInfoId;
-//End Modification (Ben Andow)
 	private int section;
-//Begin Modification (Ben Andow)
 	private Set<Courses> courses = new HashSet<Courses>(0);
-//End Modification (Ben Andow)
-	
+
 	public CourseSection() {
 	}
 
-//Begin Modification (Ben Andow)
 	public CourseSection(CourseInfo courseInfo, int section) {
 		this.courseInfo = courseInfo;
 		this.section = section;
@@ -38,12 +32,6 @@ public class CourseSection implements java.io.Serializable {
 		this.courses = courses;
 	}
 	
-//	public CourseSection(int courseInfoId, int section) {
-//		this.courseInfoId = courseInfoId;
-//		this.section = section;
-//	}
-//End Modification (Ben Andow)
-
 	public Integer getCourseSectionId() {
 		return this.courseSectionId;
 	}
@@ -52,8 +40,6 @@ public class CourseSection implements java.io.Serializable {
 		this.courseSectionId = courseSectionId;
 	}
 
-//Begin Modification (Ben Andow)
-	
 	public CourseInfo getCourseInfo() {
 		return this.courseInfo;
 	}
@@ -61,15 +47,6 @@ public class CourseSection implements java.io.Serializable {
 	public void setCourseInfo(CourseInfo courseInfo) {
 		this.courseInfo = courseInfo;
 	}
-	
-//	public int getCourseInfoId() {
-//		return this.courseInfoId;
-//	}
-//
-//	public void setCourseInfoId(int courseInfoId) {
-//		this.courseInfoId = courseInfoId;
-//	}
-//End Modification (Ben Andow)
 	
 	public int getSection() {
 		return this.section;
@@ -79,7 +56,6 @@ public class CourseSection implements java.io.Serializable {
 		this.section = section;
 	}
 
-//Begin Modification (Ben Andow)
 	public Set<Courses> getCourses() {
 		return this.courses;
 	}
@@ -87,5 +63,4 @@ public class CourseSection implements java.io.Serializable {
 	public void setCourses(Set<Courses> courses) {
 		this.courses = courses;
 	}
-//End Modification (Ben Andow)
 }

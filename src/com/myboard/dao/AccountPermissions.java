@@ -14,9 +14,7 @@ public class AccountPermissions implements java.io.Serializable {
 	
 	private int permissionId;
 	private String permissionName;
-//Begin Modification (Ben Andow)
 	private Set<Users> users = new HashSet<Users>(0);
-//End Modification (Ben Andow)
 	
 	public AccountPermissions() {
 	}
@@ -49,7 +47,6 @@ public class AccountPermissions implements java.io.Serializable {
 		this.permissionName = permissionName;
 	}
 
-//Begin Modification (Ben Andow)
 	public Set<Users> getUsers() {
 		return this.users;
 	}
@@ -57,5 +54,4 @@ public class AccountPermissions implements java.io.Serializable {
 	public void setUsers(Set<Users> users) {
 		this.users = users;
 	}
-//End Modification (Ben Andow)
 }

@@ -14,10 +14,7 @@ public class Assignments implements java.io.Serializable {
 	private static final long serialVersionUID = -6312664479960794538L;
 
 	private Integer assignmentId;
-//Begin Modification (Ben Andow)
-//	private int courseId;
 	private Courses course;
-//End Modification (Ben Andow)	
 	private String title;
 	private String description;
 	private int totalPoints;
@@ -26,25 +23,15 @@ public class Assignments implements java.io.Serializable {
 	private Date lateSubmissionDate;
 	private Integer timer;
 	private int numAttempts;
-//Begin Modification (Ben Andow)
-//	private int assignmentTypeId;
 	private AssignmentTypes assignmentType;
-//End Modification (Ben Andow)	
 	private String assignmentFilename;
-//Begin Modification (Ben Andow)
-//	private int creatorUid;
 	private CourseUsers creator;
-//End Modification (Ben Andow)	
 	private Date visibleDate;
-//Begin Modification (Ben Andow)
 	private Set<AssignmentSubmission> assignmentSubmissions = new HashSet<AssignmentSubmission>(0);
-//End Modification (Ben Andow)
-	
 	
 	public Assignments() {
 	}
 
-//Begin Modification (Ben Andow)
 	public Assignments(Courses course, String title, String description,
 			int totalPoints, Date startDate, Date endDate, int numAttempts,
 			AssignmentTypes assignmentType, String assignmentFilename, 
@@ -82,45 +69,7 @@ public class Assignments implements java.io.Serializable {
 		this.visibleDate = visibleDate;
 		this.assignmentSubmissions = assignmentSubmissions;
 	}
-	
-//	public Assignments(int courseId, String title, String description,
-//			int totalPoints, Date startDate, Date endDate, int numAttempts,
-//			int assignmentTypeId, String assignmentFilename, int creatorUid,
-//			Date visibleDate) {
-//		this.courseId = courseId;
-//		this.title = title;
-//		this.description = description;
-//		this.totalPoints = totalPoints;
-//		this.startDate = startDate;
-//		this.endDate = endDate;
-//		this.numAttempts = numAttempts;
-//		this.assignmentTypeId = assignmentTypeId;
-//		this.assignmentFilename = assignmentFilename;
-//		this.creatorUid = creatorUid;
-//		this.visibleDate = visibleDate;
-//	}
-//
-//	public Assignments(int courseId, String title, String description,
-//			int totalPoints, Date startDate, Date endDate,
-//			Date lateSubmissionDate, Integer timer, int numAttempts,
-//			int assignmentTypeId, String assignmentFilename, int creatorUid,
-//			Date visibleDate) {
-//		this.courseId = courseId;
-//		this.title = title;
-//		this.description = description;
-//		this.totalPoints = totalPoints;
-//		this.startDate = startDate;
-//		this.endDate = endDate;
-//		this.lateSubmissionDate = lateSubmissionDate;
-//		this.timer = timer;
-//		this.numAttempts = numAttempts;
-//		this.assignmentTypeId = assignmentTypeId;
-//		this.assignmentFilename = assignmentFilename;
-//		this.creatorUid = creatorUid;
-//		this.visibleDate = visibleDate;
-//	}
-//End Modification (Ben Andow)
-	
+
 	public Integer getAssignmentId() {
 		return this.assignmentId;
 	}
@@ -129,7 +78,6 @@ public class Assignments implements java.io.Serializable {
 		this.assignmentId = assignmentId;
 	}
 
-//Begin Modification (Ben Andow)
 	public Courses getCourse() {
 		return this.course;
 	}
@@ -137,15 +85,6 @@ public class Assignments implements java.io.Serializable {
 	public void setCourse(Courses course) {
 		this.course = course;
 	}
-	
-//	public int getCourseId() {
-//		return this.courseId;
-//	}
-
-//	public void setCourseId(int courseId) {
-//		this.courseId = courseId;
-//	}
-//End Modification (Ben Andow)
 	
 	public String getTitle() {
 		return this.title;
@@ -211,7 +150,6 @@ public class Assignments implements java.io.Serializable {
 		this.numAttempts = numAttempts;
 	}
 
-//Begin Modification (Ben Andow)
 	public AssignmentTypes getAssignmentType() {
 		return this.assignmentType;
 	}
@@ -219,15 +157,6 @@ public class Assignments implements java.io.Serializable {
 	public void setAssignmentType(AssignmentTypes assignmentType) {
 		this.assignmentType = assignmentType;
 	}
-	
-//	public int getAssignmentTypeId() {
-//		return this.assignmentTypeId;
-//	}
-//
-//	public void setAssignmentTypeId(int assignmentTypeId) {
-//		this.assignmentTypeId = assignmentTypeId;
-//	}
-//End Modification(Ben Andow)
 
 	public String getAssignmentFilename() {
 		return this.assignmentFilename;
@@ -237,8 +166,6 @@ public class Assignments implements java.io.Serializable {
 		this.assignmentFilename = assignmentFilename;
 	}
 	
-//Begin Modification (Ben Andow)
-	
 	public CourseUsers getCreator() {
 		return this.creator;
 	}
@@ -246,16 +173,7 @@ public class Assignments implements java.io.Serializable {
 	public void setCreator(CourseUsers creator) {
 		this.creator = creator;
 	}
-	
-//	public int getCreatorUid() {
-//		return this.creatorUid;
-//	}
-//
-//	public void setCreatorUid(int creatorUid) {
-//		this.creatorUid = creatorUid;
-//	}
-//End Modification (Ben Andow)
-	
+
 	public Date getVisibleDate() {
 		return this.visibleDate;
 	}
@@ -264,7 +182,6 @@ public class Assignments implements java.io.Serializable {
 		this.visibleDate = visibleDate;
 	}
 
-//Begin Modification (Ben Andow)
 	public Set<AssignmentSubmission> getAssignmentSubmissions() {
 		return this.assignmentSubmissions;
 	}
@@ -273,5 +190,4 @@ public class Assignments implements java.io.Serializable {
 			Set<AssignmentSubmission> assignmentSubmissions) {
 		this.assignmentSubmissions = assignmentSubmissions;
 	}
-//End Modification (Ben Andow)
 }

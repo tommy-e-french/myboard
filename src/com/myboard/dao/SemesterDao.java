@@ -44,7 +44,6 @@ public class SemesterDao extends BaseDao{
 		return instance;
 	}
 	
-//Begin Modification (Ben Andow)
 	@SuppressWarnings("unchecked")
 	public List<Semester> readAll(Semester instance) {
 		log.debug("readAll " + entitySimpleName);
@@ -61,7 +60,6 @@ public class SemesterDao extends BaseDao{
 		}
 		return result;
 	}
-//End Modification (Ben Andow)
 
 	public void update(Semester instance) {
 		log.debug("updating " + entitySimpleName + " instance");

@@ -17,11 +17,8 @@ public class Semester implements java.io.Serializable {
 	private String semesterName;
 	private Date startDate;
 	private Date endDate;
-//Begin Modification (Ben Andow)
 	private Set<Courses> courses = new HashSet<Courses>(0);
-//End Modification (Ben Andow)
-	
-	
+
 	public Semester() {
 	}
 
@@ -31,7 +28,6 @@ public class Semester implements java.io.Serializable {
 		this.endDate = endDate;
 	}
 	
-//Begin Modification (Ben Andow)
 	public Semester(String semesterName, Date startDate, Date endDate,
 			Set<Courses> courses) {
 		this.semesterName = semesterName;
@@ -39,7 +35,6 @@ public class Semester implements java.io.Serializable {
 		this.endDate = endDate;
 		this.courses = courses;
 	}
-//End Modification (Ben Andow)
 	
 	public Integer getCourseSemesterId() {
 		return this.courseSemesterId;
@@ -73,7 +68,6 @@ public class Semester implements java.io.Serializable {
 		this.endDate = endDate;
 	}
 	
-//Begin Modification (Ben Andow)
 	public Set<Courses> getCourses() {
 		return this.courses;
 	}
@@ -81,5 +75,4 @@ public class Semester implements java.io.Serializable {
 	public void setCourses(Set<Courses> courses) {
 		this.courses = courses;
 	}
-//End Modification (Ben Andow)
 }

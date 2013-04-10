@@ -44,7 +44,6 @@ public class UsersDao extends BaseDao {
 		return instance;
 	}
 	
-//Begin Modification (Ben Andow)
 	@SuppressWarnings("unchecked")
 	public List<Users> readAll(Users instance) {
 		log.debug("readAll " + entitySimpleName);
@@ -61,8 +60,7 @@ public class UsersDao extends BaseDao {
 		}
 		return result;
 	}
-//End Modification (Ben Andow)
-
+	
 	public void update(Users instance) {
 		log.debug("updating " + entitySimpleName + " instance");
 
