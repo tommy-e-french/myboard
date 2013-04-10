@@ -1,5 +1,8 @@
 package com.myboard.dao;
 
+import java.util.HashSet;
+import java.util.Set;
+
 // Generated Mar 13, 2013 12:50:36 AM by Hibernate Tools 4.0.0
 
 /**
@@ -7,15 +10,27 @@ package com.myboard.dao;
  */
 public class AccountPermissions implements java.io.Serializable {
 
+	private static final long serialVersionUID = -5049761763787715617L;
+	
 	private int permissionId;
 	private String permissionName;
-
+//Begin Modification (Ben Andow)
+	private Set<Users> users = new HashSet<Users>(0);
+//End Modification (Ben Andow)
+	
 	public AccountPermissions() {
 	}
 
 	public AccountPermissions(int permissionId, String permissionName) {
 		this.permissionId = permissionId;
 		this.permissionName = permissionName;
+	}
+	
+	public AccountPermissions(int permissionId, String permissionName,
+			Set<Users> users) {
+		this.permissionId = permissionId;
+		this.permissionName = permissionName;
+		this.users = users;
 	}
 
 	public int getPermissionId() {
@@ -34,4 +49,13 @@ public class AccountPermissions implements java.io.Serializable {
 		this.permissionName = permissionName;
 	}
 
+//Begin Modification (Ben Andow)
+	public Set<Users> getUsers() {
+		return this.users;
+	}
+
+	public void setUsers(Set<Users> users) {
+		this.users = users;
+	}
+//End Modification (Ben Andow)
 }

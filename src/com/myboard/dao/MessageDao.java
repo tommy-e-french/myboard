@@ -1,5 +1,7 @@
 package com.myboard.dao;
 
+import java.util.List;
+
 import org.apache.commons.logging.Log;
 import org.apache.commons.logging.LogFactory;
 
@@ -41,6 +43,25 @@ public class MessageDao extends BaseDao {
 		}
 		return instance;
 	}
+	
+//Begin Modification (Ben Andow)
+	@SuppressWarnings("unchecked")
+	public List<Message> readAll(Message instance) {
+		log.debug("readAll " + entitySimpleName);
+		List<Message> result = null;
+		
+		try {
+			result = (List<Message>)super.readAll(entityFullName, instance);
+			log.debug(entitySimpleName + " readAll successful, instance found");
+		} catch(EntityNotFoundException ex){
+			log.error(entitySimpleName + " readAll successful, no instance found", ex);
+		} catch (RuntimeException re) {
+			log.error(entitySimpleName + " readAll failed", re);
+			throw re;
+		}
+		return result;
+	}
+//End Modification (Ben Andow)
 
 	public void update(Message instance) {
 		log.debug("updating " + entitySimpleName + " instance");
