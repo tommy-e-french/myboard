@@ -14,25 +14,16 @@ public class Message implements java.io.Serializable {
 
 	private Integer messageId;
 	private Integer parentId;
-//Begin Modification (Ben Andow)
 	private Courses course;
 	private CourseUsers sender;
-//	private int fromUid;
-//	private int courseId;
-//End Modification (Ben Andow)
 	private String title;
 	private String message;
 	private String attachmentFilename;
-//Begin Modification (Ben Andow)
-	private Set<MessageRecipient> recipients = new HashSet<MessageRecipient>(
-			0);
-//End Modification (Ben Andow)
+	private Set<MessageRecipient> recipients = new HashSet<MessageRecipient>(0);
 	
 	public Message() {
 	}
 
-//Begin Modification (Ben Andow)
-	
 	public Message(CourseUsers sender, Courses course, String title, String message) {
 		this.course = course;
 		this.sender = sender;
@@ -52,24 +43,6 @@ public class Message implements java.io.Serializable {
 		this.recipients = recipients;
 	}
 	
-//	public Message(int fromUid, int courseId, String title, String message) {
-//		this.fromUid = fromUid;
-//		this.courseId = courseId;
-//		this.title = title;
-//		this.message = message;
-//	}
-//
-//	public Message(Integer parentId, int fromUid, int courseId, String title,
-//			String message, String attachmentFilename) {
-//		this.parentId = parentId;
-//		this.fromUid = fromUid;
-//		this.courseId = courseId;
-//		this.title = title;
-//		this.message = message;
-//		this.attachmentFilename = attachmentFilename;
-//	}
-//End Modification (Ben Andow)
-	
 	public Integer getMessageId() {
 		return this.messageId;
 	}
@@ -86,7 +59,6 @@ public class Message implements java.io.Serializable {
 		this.parentId = parentId;
 	}
 
-//Begin Modification (Ben Andow)
 	public Courses getCourse() {
 		return this.course;
 	}
@@ -102,23 +74,6 @@ public class Message implements java.io.Serializable {
 	public void setSender(CourseUsers sender) {
 		this.sender = sender;
 	}
-	
-//	public int getFromUid() {
-//		return this.fromUid;
-//	}
-//
-//	public void setFromUid(int fromUid) {
-//		this.fromUid = fromUid;
-//	}
-//
-//	public int getCourseId() {
-//		return this.courseId;
-//	}
-//
-//	public void setCourseId(int courseId) {
-//		this.courseId = courseId;
-//	}
-//End Modification (Ben Andow)
 
 	public String getTitle() {
 		return this.title;
@@ -144,7 +99,6 @@ public class Message implements java.io.Serializable {
 		this.attachmentFilename = attachmentFilename;
 	}
 	
-//Begin Modification (Ben Andow)
 	public Set<MessageRecipient> getRecipients() {
 		return this.recipients;
 	}
@@ -152,5 +106,4 @@ public class Message implements java.io.Serializable {
 	public void setRecipients(Set<MessageRecipient> recipients) {
 		this.recipients = recipients;
 	}
-//End Modification (Ben Andow)
 }

@@ -44,7 +44,6 @@ public class CourseRolesDao extends BaseDao {
 		return instance;
 	}
 	
-//Begin Modification (Ben Andow)
 	@SuppressWarnings("unchecked")
 	public List<CourseRoles> readAll(CourseRoles instance) {
 		log.debug("readAll " + entitySimpleName);
@@ -61,7 +60,6 @@ public class CourseRolesDao extends BaseDao {
 		}
 		return result;
 	}
-//End Modification (Ben Andow)
 
 	public void update(CourseRoles instance) {
 		log.debug("updating " + entitySimpleName + " instance");

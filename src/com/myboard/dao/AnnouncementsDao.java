@@ -44,7 +44,6 @@ public class AnnouncementsDao extends BaseDao {
 		return instance;
 	}
 
-//Begin Modification (Ben Andow)
 	@SuppressWarnings("unchecked")
 	public List<Announcements> readAll(Announcements instance) {
 	log.debug("readAll " + entitySimpleName);
@@ -61,7 +60,6 @@ public class AnnouncementsDao extends BaseDao {
 		}
 		return result;
 	}
-//End Modification (Ben Andow)
 	
 	public void update(Announcements instance) {
 		log.debug("updating " + entitySimpleName + " instance");

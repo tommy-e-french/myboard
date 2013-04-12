@@ -12,22 +12,15 @@ public class Announcements implements java.io.Serializable {
 	private static final long serialVersionUID = 5414999601181931682L;
 
 	private Integer announcementId;
-//Begin Modification (Ben Andow)
-//	private int courseId;
 	private Courses course;
-//End Modificaiton (Ben Andow)
 	private String title;
 	private String description;
 	private Date datePosted;
-//Begin Modification (Ben Andow)
-//	private int creatorUid;
 	private CourseUsers creator;
-//End Modification (Ben Andow)
 	
 	public Announcements() {
 	}
 
-//Begin Modification (Ben Andow)
 	public Announcements(Courses course, String title, String description, 
 			Date datePosted, CourseUsers creator) {
 		this.course = course;
@@ -36,15 +29,6 @@ public class Announcements implements java.io.Serializable {
 		this.description = description;
 		this.datePosted = datePosted;
 	}
-//	public Announcements(int courseId, String title, String description,
-//			Date datePosted, int creatorUid) {
-//		this.courseId = courseId;
-//		this.title = title;
-//		this.description = description;
-//		this.datePosted = datePosted;
-//		this.creatorUid = creatorUid;
-//	}
-//End Modification (Ben Andow)
 	
 	public Integer getAnnouncementId() {
 		return this.announcementId;
@@ -54,7 +38,6 @@ public class Announcements implements java.io.Serializable {
 		this.announcementId = announcementId;
 	}
 
-//Begin Modification (Ben Andow)
 	public Courses getCourse() {
 		return this.course;
 	}
@@ -63,14 +46,6 @@ public class Announcements implements java.io.Serializable {
 		this.course = course;
 	}
 	
-//	public int getCourseId() {
-//		return this.courseId;
-//	}
-//
-//	public void setCourseId(int courseId) {
-//		this.courseId = courseId;
-//	}
-//End Modification (Ben Andow)
 	public String getTitle() {
 		return this.title;
 	}
@@ -95,7 +70,6 @@ public class Announcements implements java.io.Serializable {
 		this.datePosted = datePosted;
 	}
 	
-//Begin Modification (Ben Andow)
 	public CourseUsers getCreator() {
 		return this.creator;
 	}
@@ -103,14 +77,4 @@ public class Announcements implements java.io.Serializable {
 	public void setCreator(CourseUsers creator) {
 		this.creator = creator;
 	}
-
-//	public int getCreatorUid() {
-//		return this.creatorUid;
-//	}
-//
-//	public void setCreatorUid(int creatorUid) {
-//		this.creatorUid = creatorUid;
-//	}
-//End Modification (Ben Andow)
-	
 }

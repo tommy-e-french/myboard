@@ -62,7 +62,6 @@ public class User implements Serializable {
 		
 		UsersDao dao = new UsersDao();
 		
-//Begin Modification (Ben Andow)
 		com.myboard.dao.Department d = getDeptObjById();
 		if(d == null) return;
 		com.myboard.dao.AccountPermissions p = getPermissionObjById();
@@ -70,14 +69,9 @@ public class User implements Serializable {
 		
 		Users users = new Users(this.uid, this.firstName, this.lastName, d, this.password, p,
         this.creationDate, this.lastLogin, this.privateDirectory, this.active, this.emailAddress);
-//		Users users = new Users(this.uid, this.firstName, this.lastName, this.department, this.password, this.permissionId,
-//				                this.creationDate, this.lastLogin, this.privateDirectory, this.active, this.emailAddress);
-//End Modification (Ben Andow)
 		dao.create(users);
 	}
 	
-//Begin Modification (Ben Andow)
-	//Probably a better way of doing this
 	private com.myboard.dao.Department getDeptObjById(){
 		DepartmentDao dao = new DepartmentDao();
 		return dao.read(this.department+"");
@@ -88,8 +82,6 @@ public class User implements Serializable {
 		return dao.read(this.permissionId+"");
 	}
 	
-//End Modification (Ben Andow)
-	
 	public void updateUser(){		
 		UsersDao dao = new UsersDao();
 		
@@ -99,12 +91,8 @@ public class User implements Serializable {
 			users.setPassword(!this.password.isEmpty() && this.password != users.getPassword() ? this.password : users.getPassword());
 			users.setFirstName(!this.firstName.isEmpty() && this.firstName != users.getFirstName() ? this.firstName : users.getFirstName());
 			users.setLastName(!this.lastName.isEmpty() && this.lastName != users.getLastName() ? this.lastName : users.getLastName());
-//Begin Modification (Ben Andow)
 			users.setDepartment(this.department != User.INVALID_DEPARTMENT && this.department != users.getDepartment().getDeptId() ? getDeptObjById() : users.getDepartment());
 			users.setPermission(this.permissionId != User.INVALID_ACCOUNT_PERMISSIONS && this.permissionId != users.getPermission().getPermissionId() ? getPermissionObjById() : users.getPermission());
-//			users.setDepartment(this.department != User.INVALID_DEPARTMENT && this.department != users.getDepartment() ? this.department : users.getDepartment());
-//			users.setPermissionId(this.permissionId != User.INVALID_ACCOUNT_PERMISSIONS && this.permissionId != users.getPermissionId() ? this.permissionId : users.getPermissionId());
-//End Modification (Ben Andow)
 			users.setEmailAddress(!this.emailAddress.isEmpty() && this.emailAddress != users.getEmailAddress() ? this.emailAddress : users.getEmailAddress());
 			dao.update(users);
 		}
@@ -117,12 +105,8 @@ public class User implements Serializable {
 		if(users != null){
 			this.setFirstName(users.getFirstName());
 			this.setLastName(users.getLastName());
-//Begin Modification (Ben Andow)
 			this.setDepartment(users.getDepartment().getDeptId());
-			this.setPermissionId(users.getPermission().getPermissionId());	
-//			this.setDepartment(users.getDepartment());
-//			this.setPermissionId(users.getPermissionId());
-//End Modification (Ben Andow)
+			this.setPermissionId(users.getPermission().getPermissionId());
 			this.setEmailAddress(users.getEmailAddress());
 			this.setPassword(users.getPassword());
 		}

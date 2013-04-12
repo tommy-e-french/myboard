@@ -15,20 +15,12 @@ public class CourseMaterial implements java.io.Serializable {
 	private String title;
 	private String description;
 	private Date uploadDate;
-//Begin Modification (Ben Andow)
 	private CourseUsers creator;
-//	private int creatorUid;
-//End Modification (Ben Andow)
 	private String materialFilename;
-//Begin Modification (Ben Andow)
 	private Courses course;
-//	private int courseId;
-//End Modification (Ben Andow)
 
 	public CourseMaterial() {
 	}
-
-//Begin Modification (Ben Andow)
 
 	public CourseMaterial(String title, Date uploadDate, CourseUsers creator,
 			String materialFilename, Courses course) {
@@ -48,26 +40,7 @@ public class CourseMaterial implements java.io.Serializable {
 		this.uploadDate = uploadDate;
 		this.materialFilename = materialFilename;
 	}
-//	public CourseMaterial(String title, Date uploadDate, int creatorUid,
-//			String materialFilename, int courseId) {
-//		this.title = title;
-//		this.uploadDate = uploadDate;
-//		this.creatorUid = creatorUid;
-//		this.materialFilename = materialFilename;
-//		this.courseId = courseId;
-//	}
-//
-//	public CourseMaterial(String title, String description, Date uploadDate,
-//			int creatorUid, String materialFilename, int courseId) {
-//		this.title = title;
-//		this.description = description;
-//		this.uploadDate = uploadDate;
-//		this.creatorUid = creatorUid;
-//		this.materialFilename = materialFilename;
-//		this.courseId = courseId;
-//	}
-//End Modification (Ben Andow)
-
+	
 	public Integer getCourseMaterialId() {
 		return this.courseMaterialId;
 	}
@@ -100,7 +73,6 @@ public class CourseMaterial implements java.io.Serializable {
 		this.uploadDate = uploadDate;
 	}
 
-//Begin Modification (Ben Andow)
 	public CourseUsers getCreator() {
 		return this.creator;
 	}
@@ -108,15 +80,6 @@ public class CourseMaterial implements java.io.Serializable {
 	public void setCreator(CourseUsers creator) {
 		this.creator = creator;
 	}
-	
-//	public int getCreatorUid() {
-//		return this.creatorUid;
-//	}
-//
-//	public void setCreatorUid(int creatorUid) {
-//		this.creatorUid = creatorUid;
-//	}
-//End Modification (Ben Andow)
 	
 	public String getMaterialFilename() {
 		return this.materialFilename;
@@ -126,7 +89,6 @@ public class CourseMaterial implements java.io.Serializable {
 		this.materialFilename = materialFilename;
 	}
 
-//Begin Modification (Ben Andow)
 	public Courses getCourse() {
 		return this.course;
 	}
@@ -134,13 +96,4 @@ public class CourseMaterial implements java.io.Serializable {
 	public void setCourse(Courses course) {
 		this.course = course;
 	}
-	
-//	public int getCourseId() {
-//		return this.courseId;
-//	}
-//
-//	public void setCourseId(int courseId) {
-//		this.courseId = courseId;
-//	}
-//End Modification (Ben Andow)
 }

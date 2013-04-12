@@ -10,19 +10,14 @@ public class MessageRecipient implements java.io.Serializable {
 	private static final long serialVersionUID = 2298710433170661934L;
 
 	private Integer messageRecipientId;
-//Begin Modification (Ben Andow)
 	private Message message;
 	private CourseUsers recipient;
-//	private int messageId;
-//	private int courseUid;
-//End Modification (Ben Andow)
 	private boolean deleted;
 	private boolean isNew;
 
 	public MessageRecipient() {
 	}
 
-//Begin Modification (Ben Andow)
 	public MessageRecipient(Message message, CourseUsers recipient,
 			boolean deleted, boolean isNew) {
 		this.message = message;
@@ -30,15 +25,6 @@ public class MessageRecipient implements java.io.Serializable {
 		this.deleted = deleted;
 		this.isNew = isNew;
 	}
-	
-//	public MessageRecipient(int messageId, int courseUid, boolean deleted,
-//			boolean isNew) {
-//		this.messageId = messageId;
-//		this.courseUid = courseUid;
-//		this.deleted = deleted;
-//		this.isNew = isNew;
-//	}
-//End Modification (Ben Andow)
 	
 	public Integer getMessageRecipientId() {
 		return this.messageRecipientId;
@@ -48,8 +34,6 @@ public class MessageRecipient implements java.io.Serializable {
 		this.messageRecipientId = messageRecipientId;
 	}
 
-//Begin Modification (Ben Andow)
-	
 	public Message getMessage() {
 		return this.message;
 	}
@@ -66,23 +50,6 @@ public class MessageRecipient implements java.io.Serializable {
 		this.recipient = recipient;
 	}
 	
-//	public int getMessageId() {
-//		return this.messageId;
-//	}
-//
-//	public void setMessageId(int messageId) {
-//		this.messageId = messageId;
-//	}
-//
-//	public int getCourseUid() {
-//		return this.courseUid;
-//	}
-//
-//	public void setCourseUid(int courseUid) {
-//		this.courseUid = courseUid;
-//	}
-//End Modification (Ben Andow)
-	
 	public boolean isDeleted() {
 		return this.deleted;
 	}
@@ -98,5 +65,4 @@ public class MessageRecipient implements java.io.Serializable {
 	public void setIsNew(boolean isNew) {
 		this.isNew = isNew;
 	}
-
 }

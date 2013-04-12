@@ -10,23 +10,16 @@ public class AdditionalGradeEntries implements java.io.Serializable {
 	private static final long serialVersionUID = -3955170939205033552L;
 
 	private Integer entryId;
-//Begin Modification (Ben Andow)	
-//	private int courseUid;
 	private CourseUsers courseUser;
-//End Modification (Ben Andow)
 	private Integer pointsEarned;
 	private int totalPoints;
 	private String title;
 	private String comments;
-//Begin Modification (Ben Andow)	
-//	private int createdBy;
 	private CourseUsers createdBy;
-//End Modification (Ben Andow)
 
 	public AdditionalGradeEntries() {
 	}
-
-//Begin Modification (Ben Andow)	
+	
 	public AdditionalGradeEntries(CourseUsers courseUser, int totalPoints, 
 			String title, CourseUsers createdBy) {
 		this.createdBy = createdBy;
@@ -43,26 +36,7 @@ public class AdditionalGradeEntries implements java.io.Serializable {
 		this.totalPoints = totalPoints;
 		this.title = title;
 		this.comments = comments;
-	}	
-	
-//	public AdditionalGradeEntries(int courseUid, int totalPoints, String title,
-//			int createdBy) {
-//		this.courseUid = courseUid;
-//		this.totalPoints = totalPoints;
-//		this.title = title;
-//		this.createdBy = createdBy;
-//	}
-//
-//	public AdditionalGradeEntries(int courseUid, Integer pointsEarned,
-//			int totalPoints, String title, String comments, int createdBy) {
-//		this.courseUid = courseUid;
-//		this.pointsEarned = pointsEarned;
-//		this.totalPoints = totalPoints;
-//		this.title = title;
-//		this.comments = comments;
-//		this.createdBy = createdBy;
-//	}
-//End Modification(Ben Andow)
+	}
 	
 	public Integer getEntryId() {
 		return this.entryId;
@@ -72,7 +46,6 @@ public class AdditionalGradeEntries implements java.io.Serializable {
 		this.entryId = entryId;
 	}
 
-//Begin Modification(Ben Andow)	
 	public CourseUsers getCourseUser() {
 		return this.courseUser;
 	}
@@ -80,14 +53,6 @@ public class AdditionalGradeEntries implements java.io.Serializable {
 	public void setCourseUser(CourseUsers courseUser) {
 		this.courseUser = courseUser;
 	}
-//	public int getCourseUid() {
-//		return this.courseUid;
-//	}
-//
-//	public void setCourseUid(int courseUid) {
-//		this.courseUid = courseUid;
-//	}
-//End Modification(Ben Andow)
 	
 	public Integer getPointsEarned() {
 		return this.pointsEarned;
@@ -120,7 +85,7 @@ public class AdditionalGradeEntries implements java.io.Serializable {
 	public void setComments(String comments) {
 		this.comments = comments;
 	}
-//Start Modification (Ben Andow)
+
 	public CourseUsers getCreatedBy() {
 		return this.createdBy;
 	}
@@ -128,12 +93,4 @@ public class AdditionalGradeEntries implements java.io.Serializable {
 	public void setCreatedBy(CourseUsers createdBy) {
 		this.createdBy = createdBy;
 	}
-//	public int getCreatedBy() {
-//		return this.createdBy;
-//	}
-//
-//	public void setCreatedBy(int createdBy) {
-//		this.createdBy = createdBy;
-//	}
-//End Modification (Ben Andow)
 }

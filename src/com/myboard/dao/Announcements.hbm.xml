@@ -8,15 +8,9 @@
             <column name="announcement_id" />
             <generator class="identity" />
         </id>
-<!--  
-        <property name="courseId" type="int">
-            <column name="course_id" not-null="true" />
-        </property>
-Begin Modification(Ben Andow)-->
-<many-to-one name="course" class="com.myboard.dao.Courses" fetch="select">
-	<column name="course_id" not-null="true" />
-</many-to-one>
-<!-- End Modification (Ben Andow) -->    
+		<many-to-one name="course" class="com.myboard.dao.Courses" fetch="select">
+			<column name="course_id" not-null="true" />
+		</many-to-one>
         <property name="title" type="string">
             <column name="title" length="50" not-null="true" />
         </property>
@@ -26,14 +20,8 @@ Begin Modification(Ben Andow)-->
         <property name="datePosted" type="timestamp">
             <column name="date_posted" length="19" not-null="true" />
         </property>
-<!-- 
-        <property name="creatorUid" type="int">
-            <column name="creator_uid" not-null="true" />
-        </property>
-Begin Modification(Ben Andow)-->
-<many-to-one name="creator" class="com.myboard.dao.CourseUsers" fetch="select">
-	<column name="creator_uid" not-null="true" />
-</many-to-one>
-<!-- End Modification (Ben Andow) --> 
+		<many-to-one name="creator" class="com.myboard.dao.CourseUsers" fetch="select">
+			<column name="creator_uid" not-null="true" />
+		</many-to-one>
     </class>
 </hibernate-mapping>
