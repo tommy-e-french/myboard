@@ -9,9 +9,15 @@ import java.util.Date;
  */
 public class AssignmentSubmission implements java.io.Serializable {
 
+	private static final long serialVersionUID = 5547185119652612040L;
+
 	private Integer submissionId;
-	private int assignmentId;
-	private int courseUid;
+//Begin Modification (Ben Andow)
+//	private int assignmentId;
+//	private int courseUid;
+	private Assignments assignment;
+	private CourseUsers user;
+// End Modification (Ben Andow)
 	private Date dateStarted;
 	private Date dateSubmitted;
 	private Integer pointsEarned;
@@ -21,25 +27,46 @@ public class AssignmentSubmission implements java.io.Serializable {
 	public AssignmentSubmission() {
 	}
 
-	public AssignmentSubmission(int assignmentId, int courseUid,
-			Date dateStarted) {
-		this.assignmentId = assignmentId;
-		this.courseUid = courseUid;
+//Begin Modification (Ben Andow)
+	public AssignmentSubmission(Assignments assignment,
+			CourseUsers user, Date dateStarted) {
+		this.assignment = assignment;
+		this.user = user;
 		this.dateStarted = dateStarted;
 	}
 
-	public AssignmentSubmission(int assignmentId, int courseUid,
-			Date dateStarted, Date dateSubmitted, Integer pointsEarned,
-			String submissionFilename, String comments) {
-		this.assignmentId = assignmentId;
-		this.courseUid = courseUid;
+	public AssignmentSubmission(Assignments assignment,
+			CourseUsers user, Date dateStarted, Date dateSubmitted,
+			Integer pointsEarned, String submissionFilename, String comments) {
+		this.assignment = assignment;
+		this.user = user;
 		this.dateStarted = dateStarted;
 		this.dateSubmitted = dateSubmitted;
 		this.pointsEarned = pointsEarned;
 		this.submissionFilename = submissionFilename;
 		this.comments = comments;
 	}
-
+	
+//	public AssignmentSubmission(int assignmentId, int courseUid,
+//			Date dateStarted) {
+//		this.assignmentId = assignmentId;
+//		this.courseUid = courseUid;
+//		this.dateStarted = dateStarted;
+//	}
+//
+//	public AssignmentSubmission(int assignmentId, int courseUid,
+//			Date dateStarted, Date dateSubmitted, Integer pointsEarned,
+//			String submissionFilename, String comments) {
+//		this.assignmentId = assignmentId;
+//		this.courseUid = courseUid;
+//		this.dateStarted = dateStarted;
+//		this.dateSubmitted = dateSubmitted;
+//		this.pointsEarned = pointsEarned;
+//		this.submissionFilename = submissionFilename;
+//		this.comments = comments;
+//	}
+//End Modification (Ben Andow)
+	
 	public Integer getSubmissionId() {
 		return this.submissionId;
 	}
@@ -48,21 +75,39 @@ public class AssignmentSubmission implements java.io.Serializable {
 		this.submissionId = submissionId;
 	}
 
-	public int getAssignmentId() {
-		return this.assignmentId;
+//Begin Modification (Ben Andow)
+	public Assignments getAssignment() {
+		return this.assignment;
 	}
 
-	public void setAssignmentId(int assignmentId) {
-		this.assignmentId = assignmentId;
+	public void setAssignment(Assignments assignment) {
+		this.assignment = assignment;
 	}
 
-	public int getCourseUid() {
-		return this.courseUid;
+	public CourseUsers getUser() {
+		return this.user;
 	}
 
-	public void setCourseUid(int courseUid) {
-		this.courseUid = courseUid;
+	public void setUser(CourseUsers user) {
+		this.user = user;
 	}
+	
+//	public int getAssignmentId() {
+//		return this.assignmentId;
+//	}
+//
+//	public void setAssignmentId(int assignmentId) {
+//		this.assignmentId = assignmentId;
+//	}
+//
+//	public int getCourseUid() {
+//		return this.courseUid;
+//	}
+//
+//	public void setCourseUid(int courseUid) {
+//		this.courseUid = courseUid;
+//	}
+//End Modification (Ben Andow)
 
 	public Date getDateStarted() {
 		return this.dateStarted;

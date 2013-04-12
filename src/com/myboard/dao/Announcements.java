@@ -9,25 +9,43 @@ import java.util.Date;
  */
 public class Announcements implements java.io.Serializable {
 
+	private static final long serialVersionUID = 5414999601181931682L;
+
 	private Integer announcementId;
-	private int courseId;
+//Begin Modification (Ben Andow)
+//	private int courseId;
+	private Courses course;
+//End Modificaiton (Ben Andow)
 	private String title;
 	private String description;
 	private Date datePosted;
-	private int creatorUid;
-
+//Begin Modification (Ben Andow)
+//	private int creatorUid;
+	private CourseUsers creator;
+//End Modification (Ben Andow)
+	
 	public Announcements() {
 	}
 
-	public Announcements(int courseId, String title, String description,
-			Date datePosted, int creatorUid) {
-		this.courseId = courseId;
+//Begin Modification (Ben Andow)
+	public Announcements(Courses course, String title, String description, 
+			Date datePosted, CourseUsers creator) {
+		this.course = course;
+		this.creator = creator;
 		this.title = title;
 		this.description = description;
 		this.datePosted = datePosted;
-		this.creatorUid = creatorUid;
 	}
-
+//	public Announcements(int courseId, String title, String description,
+//			Date datePosted, int creatorUid) {
+//		this.courseId = courseId;
+//		this.title = title;
+//		this.description = description;
+//		this.datePosted = datePosted;
+//		this.creatorUid = creatorUid;
+//	}
+//End Modification (Ben Andow)
+	
 	public Integer getAnnouncementId() {
 		return this.announcementId;
 	}
@@ -36,14 +54,23 @@ public class Announcements implements java.io.Serializable {
 		this.announcementId = announcementId;
 	}
 
-	public int getCourseId() {
-		return this.courseId;
+//Begin Modification (Ben Andow)
+	public Courses getCourse() {
+		return this.course;
 	}
 
-	public void setCourseId(int courseId) {
-		this.courseId = courseId;
+	public void setCourse(Courses course) {
+		this.course = course;
 	}
-
+	
+//	public int getCourseId() {
+//		return this.courseId;
+//	}
+//
+//	public void setCourseId(int courseId) {
+//		this.courseId = courseId;
+//	}
+//End Modification (Ben Andow)
 	public String getTitle() {
 		return this.title;
 	}
@@ -67,13 +94,23 @@ public class Announcements implements java.io.Serializable {
 	public void setDatePosted(Date datePosted) {
 		this.datePosted = datePosted;
 	}
-
-	public int getCreatorUid() {
-		return this.creatorUid;
+	
+//Begin Modification (Ben Andow)
+	public CourseUsers getCreator() {
+		return this.creator;
 	}
 
-	public void setCreatorUid(int creatorUid) {
-		this.creatorUid = creatorUid;
+	public void setCreator(CourseUsers creator) {
+		this.creator = creator;
 	}
 
+//	public int getCreatorUid() {
+//		return this.creatorUid;
+//	}
+//
+//	public void setCreatorUid(int creatorUid) {
+//		this.creatorUid = creatorUid;
+//	}
+//End Modification (Ben Andow)
+	
 }

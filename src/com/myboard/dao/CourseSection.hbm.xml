@@ -8,11 +8,26 @@
             <column name="course_section_id" />
             <generator class="identity" />
         </id>
+<!--  
         <property name="courseInfoId" type="int">
             <column name="course_info_id" not-null="true" />
         </property>
+Begin Modification (Ben Andow)-->
+	<many-to-one name="courseInfo" class="com.myboard.dao.CourseInfo" fetch="select">
+		<column name="course_info_id" not-null="true" />
+	</many-to-one>
+<!-- End Modification (Ben Andow) -->
+
         <property name="section" type="int">
             <column name="section" not-null="true" />
         </property>
+<!-- Begin Modification (Ben Andow) -->        
+		<set name="courses" table="Courses" inverse="true" lazy="true" fetch="select">
+            <key>
+                <column name="course_section_id" not-null="true" />
+            </key>
+            <one-to-many class="com.myboard.dao.Courses" />
+        </set>
+<!-- End Modification (Ben Andow) -->
     </class>
 </hibernate-mapping>

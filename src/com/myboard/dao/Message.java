@@ -1,5 +1,8 @@
 package com.myboard.dao;
 
+import java.util.HashSet;
+import java.util.Set;
+
 // Generated Mar 13, 2013 12:50:36 AM by Hibernate Tools 4.0.0
 
 /**
@@ -7,34 +10,66 @@ package com.myboard.dao;
  */
 public class Message implements java.io.Serializable {
 
+	private static final long serialVersionUID = 8596488949762199031L;
+
 	private Integer messageId;
 	private Integer parentId;
-	private int fromUid;
-	private int courseId;
+//Begin Modification (Ben Andow)
+	private Courses course;
+	private CourseUsers sender;
+//	private int fromUid;
+//	private int courseId;
+//End Modification (Ben Andow)
 	private String title;
 	private String message;
 	private String attachmentFilename;
-
+//Begin Modification (Ben Andow)
+	private Set<MessageRecipient> recipients = new HashSet<MessageRecipient>(
+			0);
+//End Modification (Ben Andow)
+	
 	public Message() {
 	}
 
-	public Message(int fromUid, int courseId, String title, String message) {
-		this.fromUid = fromUid;
-		this.courseId = courseId;
+//Begin Modification (Ben Andow)
+	
+	public Message(CourseUsers sender, Courses course, String title, String message) {
+		this.course = course;
+		this.sender = sender;
 		this.title = title;
 		this.message = message;
 	}
 
-	public Message(Integer parentId, int fromUid, int courseId, String title,
-			String message, String attachmentFilename) {
+	public Message(Integer parentId, CourseUsers sender, Courses course, 
+			String title, String message, String attachmentFilename,
+			Set<MessageRecipient> recipients) {
+		this.course = course;
+		this.sender = sender;
 		this.parentId = parentId;
-		this.fromUid = fromUid;
-		this.courseId = courseId;
 		this.title = title;
 		this.message = message;
 		this.attachmentFilename = attachmentFilename;
+		this.recipients = recipients;
 	}
-
+	
+//	public Message(int fromUid, int courseId, String title, String message) {
+//		this.fromUid = fromUid;
+//		this.courseId = courseId;
+//		this.title = title;
+//		this.message = message;
+//	}
+//
+//	public Message(Integer parentId, int fromUid, int courseId, String title,
+//			String message, String attachmentFilename) {
+//		this.parentId = parentId;
+//		this.fromUid = fromUid;
+//		this.courseId = courseId;
+//		this.title = title;
+//		this.message = message;
+//		this.attachmentFilename = attachmentFilename;
+//	}
+//End Modification (Ben Andow)
+	
 	public Integer getMessageId() {
 		return this.messageId;
 	}
@@ -51,21 +86,39 @@ public class Message implements java.io.Serializable {
 		this.parentId = parentId;
 	}
 
-	public int getFromUid() {
-		return this.fromUid;
+//Begin Modification (Ben Andow)
+	public Courses getCourse() {
+		return this.course;
 	}
 
-	public void setFromUid(int fromUid) {
-		this.fromUid = fromUid;
+	public void setCourse(Courses course) {
+		this.course = course;
 	}
 
-	public int getCourseId() {
-		return this.courseId;
+	public CourseUsers getSender() {
+		return this.sender;
 	}
 
-	public void setCourseId(int courseId) {
-		this.courseId = courseId;
+	public void setSender(CourseUsers sender) {
+		this.sender = sender;
 	}
+	
+//	public int getFromUid() {
+//		return this.fromUid;
+//	}
+//
+//	public void setFromUid(int fromUid) {
+//		this.fromUid = fromUid;
+//	}
+//
+//	public int getCourseId() {
+//		return this.courseId;
+//	}
+//
+//	public void setCourseId(int courseId) {
+//		this.courseId = courseId;
+//	}
+//End Modification (Ben Andow)
 
 	public String getTitle() {
 		return this.title;
@@ -90,5 +143,14 @@ public class Message implements java.io.Serializable {
 	public void setAttachmentFilename(String attachmentFilename) {
 		this.attachmentFilename = attachmentFilename;
 	}
+	
+//Begin Modification (Ben Andow)
+	public Set<MessageRecipient> getRecipients() {
+		return this.recipients;
+	}
 
+	public void setRecipients(Set<MessageRecipient> recipients) {
+		this.recipients = recipients;
+	}
+//End Modification (Ben Andow)
 }

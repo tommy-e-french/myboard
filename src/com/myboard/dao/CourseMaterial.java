@@ -9,35 +9,64 @@ import java.util.Date;
  */
 public class CourseMaterial implements java.io.Serializable {
 
+	private static final long serialVersionUID = 7559627526224071501L;
+
 	private Integer courseMaterialId;
 	private String title;
 	private String description;
 	private Date uploadDate;
-	private int creatorUid;
+//Begin Modification (Ben Andow)
+	private CourseUsers creator;
+//	private int creatorUid;
+//End Modification (Ben Andow)
 	private String materialFilename;
-	private int courseId;
+//Begin Modification (Ben Andow)
+	private Courses course;
+//	private int courseId;
+//End Modification (Ben Andow)
 
 	public CourseMaterial() {
 	}
 
-	public CourseMaterial(String title, Date uploadDate, int creatorUid,
-			String materialFilename, int courseId) {
+//Begin Modification (Ben Andow)
+
+	public CourseMaterial(String title, Date uploadDate, CourseUsers creator,
+			String materialFilename, Courses course) {
+		this.course = course;
+		this.creator = creator;
 		this.title = title;
 		this.uploadDate = uploadDate;
-		this.creatorUid = creatorUid;
 		this.materialFilename = materialFilename;
-		this.courseId = courseId;
 	}
 
 	public CourseMaterial(String title, String description, Date uploadDate,
-			int creatorUid, String materialFilename, int courseId) {
+			CourseUsers creator, String materialFilename, Courses course) {
+		this.course = course;
+		this.creator = creator;
 		this.title = title;
 		this.description = description;
 		this.uploadDate = uploadDate;
-		this.creatorUid = creatorUid;
 		this.materialFilename = materialFilename;
-		this.courseId = courseId;
 	}
+//	public CourseMaterial(String title, Date uploadDate, int creatorUid,
+//			String materialFilename, int courseId) {
+//		this.title = title;
+//		this.uploadDate = uploadDate;
+//		this.creatorUid = creatorUid;
+//		this.materialFilename = materialFilename;
+//		this.courseId = courseId;
+//	}
+//
+//	public CourseMaterial(String title, String description, Date uploadDate,
+//			int creatorUid, String materialFilename, int courseId) {
+//		this.title = title;
+//		this.description = description;
+//		this.uploadDate = uploadDate;
+//		this.creatorUid = creatorUid;
+//		this.materialFilename = materialFilename;
+//		this.courseId = courseId;
+//	}
+//End Modification (Ben Andow)
 
 	public Integer getCourseMaterialId() {
 		return this.courseMaterialId;
@@ -71,14 +100,24 @@ public class CourseMaterial implements java.io.Serializable {
 		this.uploadDate = uploadDate;
 	}
 
-	public int getCreatorUid() {
-		return this.creatorUid;
+//Begin Modification (Ben Andow)
+	public CourseUsers getCreator() {
+		return this.creator;
 	}
 
-	public void setCreatorUid(int creatorUid) {
-		this.creatorUid = creatorUid;
+	public void setCreator(CourseUsers creator) {
+		this.creator = creator;
 	}
-
+	
+//	public int getCreatorUid() {
+//		return this.creatorUid;
+//	}
+//
+//	public void setCreatorUid(int creatorUid) {
+//		this.creatorUid = creatorUid;
+//	}
+//End Modification (Ben Andow)
+	
 	public String getMaterialFilename() {
 		return this.materialFilename;
 	}
@@ -87,12 +126,21 @@ public class CourseMaterial implements java.io.Serializable {
 		this.materialFilename = materialFilename;
 	}
 
-	public int getCourseId() {
-		return this.courseId;
+//Begin Modification (Ben Andow)
+	public Courses getCourse() {
+		return this.course;
 	}
 
-	public void setCourseId(int courseId) {
-		this.courseId = courseId;
+	public void setCourse(Courses course) {
+		this.course = course;
 	}
-
+	
+//	public int getCourseId() {
+//		return this.courseId;
+//	}
+//
+//	public void setCourseId(int courseId) {
+//		this.courseId = courseId;
+//	}
+//End Modification (Ben Andow)
 }
