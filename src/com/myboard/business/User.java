@@ -1,5 +1,6 @@
 package com.myboard.business;
 
+import java.io.Serializable;
 import java.util.Date;
 
 import com.myboard.dao.AccountPermissionsDao;
@@ -7,7 +8,9 @@ import com.myboard.dao.DepartmentDao;
 import com.myboard.dao.Users;
 import com.myboard.dao.UsersDao;
 
-public class User {
+public class User implements Serializable {
+	
+	private static final long serialVersionUID = 9033128014477448074L;
 	
 	private String uid;
 	private String firstName;
@@ -105,6 +108,7 @@ public class User {
 			this.setDepartment(users.getDepartment().getDeptId());
 			this.setPermissionId(users.getPermission().getPermissionId());
 			this.setEmailAddress(users.getEmailAddress());
+			this.setPassword(users.getPassword());
 		}
 	}
 
