@@ -45,12 +45,12 @@ public class AnnouncementsDao extends BaseDao {
 	}
 
 	@SuppressWarnings("unchecked")
-	public List<Announcements> readAll(Announcements instance) {
+	public List<Announcements> readAll() {
 	log.debug("readAll " + entitySimpleName);
 	List<Announcements> result = null;
 					
 		try {
-			result = (List<Announcements>)super.readAll(entityFullName, instance);
+			result = (List<Announcements>)super.readAll(entityFullName, new Announcements());
 			log.debug(entitySimpleName + " readAll successful, instance found");
 		} catch(EntityNotFoundException ex){
 			log.error(entitySimpleName + " readAll successful, no instance found", ex);

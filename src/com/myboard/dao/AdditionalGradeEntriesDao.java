@@ -45,12 +45,12 @@ public class AdditionalGradeEntriesDao extends BaseDao {
 	}
 
 	@SuppressWarnings("unchecked")
-	public List<AdditionalGradeEntries> readAll(AdditionalGradeEntries instance) {
+	public List<AdditionalGradeEntries> readAll() {
 		log.debug("readAll " + entitySimpleName);
 		List<AdditionalGradeEntries> result = null;
 				
 		try {
-			result = (List<AdditionalGradeEntries>)super.readAll(entityFullName, instance);
+			result = (List<AdditionalGradeEntries>)super.readAll(entityFullName, new AdditionalGradeEntries());
 			log.debug(entitySimpleName + " readAll successful, instance found");
 		} catch(EntityNotFoundException ex){
 			log.error(entitySimpleName + " readAll successful, no instance found", ex);
