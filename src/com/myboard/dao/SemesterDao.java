@@ -45,12 +45,12 @@ public class SemesterDao extends BaseDao{
 	}
 	
 	@SuppressWarnings("unchecked")
-	public List<Semester> readAll(Semester instance) {
+	public List<Semester> readAll() {
 		log.debug("readAll " + entitySimpleName);
 		List<Semester> result = null;
 		
 		try {
-			result = (List<Semester>)super.readAll(entityFullName, instance);
+			result = (List<Semester>)super.readAll(entityFullName, new Semester());
 			log.debug(entitySimpleName + " readAll successful, instance found");
 		} catch(EntityNotFoundException ex){
 			log.error(entitySimpleName + " readAll successful, no instance found", ex);

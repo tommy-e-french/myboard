@@ -45,12 +45,12 @@ public class AdditionalCalendarEntriesDao extends BaseDao {
 	}
 	
 	@SuppressWarnings("unchecked")
-	public List<AdditionalCalendarEntries> readAll(AdditionalCalendarEntries instance) {
+	public List<AdditionalCalendarEntries> readAll() {
 		log.debug("readAll " + entitySimpleName);
 		List<AdditionalCalendarEntries> result = null;
 			
 		try {
-			result = (List<AdditionalCalendarEntries>)super.readAll(entityFullName, instance);
+			result = (List<AdditionalCalendarEntries>)super.readAll(entityFullName, new AdditionalCalendarEntries());
 			log.debug(entitySimpleName + " readAll successful, instance found");
 		} catch(EntityNotFoundException ex){
 			log.error(entitySimpleName + " readAll successful, no instance found", ex);
