@@ -1,9 +1,20 @@
+/*
+ * The User class is the 2nd level of abstraction
+ * (business logic) between the end user and the database.
+ * It does the heavy lifting for creating, reading, and updating
+ * database information about specific users.
+ * 
+ * Should work as is.
+ */
+
 package com.myboard.business;
 
 import java.io.Serializable;
 import java.util.Date;
+import java.util.Set;
 
 import com.myboard.dao.AccountPermissionsDao;
+import com.myboard.dao.CourseUsers;
 import com.myboard.dao.DepartmentDao;
 import com.myboard.dao.Users;
 import com.myboard.dao.UsersDao;
@@ -23,6 +34,8 @@ public class User implements Serializable {
 	private String privateDirectory;
 	private boolean active;
 	private String emailAddress;
+	
+	private Set<CourseUsers> courseUsers;
 	
 	public static final int INVALID_DEPARTMENT = -1;
 	public static final int INVALID_ACCOUNT_PERMISSIONS = -1;
@@ -109,8 +122,22 @@ public class User implements Serializable {
 			this.setPermissionId(users.getPermission().getPermissionId());
 			this.setEmailAddress(users.getEmailAddress());
 			this.setPassword(users.getPassword());
+			this.setCourseUsers(users.getCourseUsers());
 		}
-	}
+		
+		/*
+		 * THIS CODE FOR TESTING - IGNORE
+		 * if(this.courseUsers != null)
+		 * {
+		 *	 CourseUsers[] usersArr = new CourseUsers[courseUsers.size()];
+		 *	 courseUsers.toArray(usersArr);
+		 *	 for(int i=0; i<usersArr.length; i++)
+		 *	 {
+		 *		 System.out.println("Hit here in User: " + usersArr[i].getCourse().getSection().getCourseInfo().getCourseName());
+		 * 	 }
+		 * }//if
+		 */
+	}//read
 
 	public String getUid() {
 		return uid;
@@ -193,6 +220,16 @@ public class User implements Serializable {
 
 	public void setEmailAddress(String emailAddress) {
 		this.emailAddress = emailAddress.trim();
+	}
+	
+	public Set<CourseUsers> getCourseUsers()
+	{
+		return courseUsers;
+	}
+	
+	public void setCourseUsers(Set<CourseUsers> courseUsers)
+	{
+		this.courseUsers = courseUsers;
 	}
 	
 }
